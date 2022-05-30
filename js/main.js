@@ -118,36 +118,55 @@ class Movie {
     }
 }
 
+function getRequester(uri) {
+    let xmlHttpElement = new XMLHttpRequest();
+
+    xmlHttpElement.open("get", uri);
+    xmlHttpElement.responseType = "json";
+    xmlHttpElement.send();
+
+    xmlHttpElement.onload = function() {
+        if (xmlHttpElement.status != 200) {
+            console.log("Erreur" + xmlHttpElement.status + ":" + xmlHttpElement.statusText);
+        } else {
+            //console.log(xmlHttpElement.length + " octets recus\n" + JSON.stringify(xmlHttpElement.response));
+            let requestResponse = JSON.parse(JSON.stringify(xmlHttpElement.response));
+            console.log(requestResponse.actors + " est la reponse");
+        }
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
 
     new Carousel(document.querySelector('#best-movies-carousel'), {
         slideToScroll: 1,
         slidesVisible: 4
-    })
+    });
 
     new Carousel(document.querySelector('#scifi-movies-carousel'), {
         slideToScroll: 1,
         slidesVisible: 4
-    })
+    });
 
     new Carousel(document.querySelector('#action-movies-carousel'), {
         slideToScroll: 1,
         slidesVisible: 4
-    })
+    });
 
     new Carousel(document.querySelector('#animation-movies-carousel'), {
         slideToScroll: 1,
         slidesVisible: 4
-    })
+    });
+
+    getRequester("http://127.0.0.1:8000/api/v1/titles/9");
 
     const modalContainer = document.querySelector(".modal-container");
     const modalTriggers = document.querySelectorAll(".modal-trigger");
 
-    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal));
 
     function toggleModal() {
-        modalContainer.classList.toggle("active")
+        modalContainer.classList.toggle("active");
     }
 
 })
