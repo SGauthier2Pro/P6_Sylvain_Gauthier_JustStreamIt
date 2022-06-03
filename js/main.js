@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let categorie1 = "Sci-Fi";
     let categorie2 = "Action";
-    let categorie3 = "Animation";
+    let categorie3 = "Musical";
 
     let urlBestMovies = "http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7";
     let urlCategorie1 = "http://127.0.0.1:8000/api/v1/titles/?genre=" + categorie1 + "&sort_by=-imdb_score&page_size=7";
