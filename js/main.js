@@ -263,7 +263,7 @@ class Movie {
     constructor(elementResult) {
         this.id = elementResult.id;
         this.coverPicture = elementResult.image_url;
-        this.title = elementResult.title;
+        this.title = elementResult.original_title;
         this.genres = elementResult.genres;
         this.datePublished = elementResult.date_published;
         this.rated = elementResult.rated;
@@ -397,53 +397,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let urlApiTitles = "http://127.0.0.1:8000/api/v1/titles/"
 
+    let categorie1 = "Sci-Fi";
+    let categorie2 = "Action";
+    let categorie3 = "Animation";
+
     let urlBestMovies = "http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7";
-    let urlSciFi = "http://127.0.0.1:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score&page_size=7";
-    let urlAction = "http://127.0.0.1:8000/api/v1/titles/?genre=Action&sort_by=-imdb_score&page_size=7";
-    let urlAnimation = "http://127.0.0.1:8000/api/v1/titles/?genre=Animation&sort_by=-imdb_score&page_size=7";
+    let urlCategorie1 = "http://127.0.0.1:8000/api/v1/titles/?genre=" + categorie1 + "&sort_by=-imdb_score&page_size=7";
+    let urlCategorie2 = "http://127.0.0.1:8000/api/v1/titles/?genre=" + categorie2 + "&sort_by=-imdb_score&page_size=7";
+    let urlCategorie3 = "http://127.0.0.1:8000/api/v1/titles/?genre=" + categorie3 + "&sort_by=-imdb_score&page_size=7";
 
     createBestMovies(urlBestMovies, urlApiTitles);
 
-    createCategorie(urlSciFi, urlApiTitles, 1);
+    createCategorie(urlCategorie1, urlApiTitles, 1);
 
-    createCategorie(urlAction, urlApiTitles, 2);
+    createCategorie(urlCategorie2, urlApiTitles, 2);
 
-    createCategorie(urlAnimation, urlApiTitles, 3);
-
-    /*new Carousel(document.querySelector('#scifi-movies-carousel'), {
-        slideToScroll: 1,
-        slidesVisible: 4
-    });
-
-    new Carousel(document.querySelector('#action-movies-carousel'), {
-        slideToScroll: 1,
-        slidesVisible: 4
-    });
-
-    new Carousel(document.querySelector('#animation-movies-carousel'), {
-        slideToScroll: 1,
-        slidesVisible: 4
-    });*/
-
-    //const entireResponses = new Array();
-    //console.log(getRequester("http://127.0.0.1:8000/api/v1/titles/?genre=Animation&sort_by=-imdb_score"));
-    //console.log(getMoviesFromRequest("http://127.0.0.1:8000/api/v1/titles/?genre=Animation&sort_by=-imdb_score"));
-
-
-    /*const modalContainers = document.querySelectorAll(".modal-container");
-    const modalTriggers = document.querySelectorAll(".modal-trigger");
-
-    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal));
-
-    function toggleModal() {
-        modalContainers.forEach(modalContainer => {
-            console.log(modalContainer.getAttribute("class"));
-            if (modalContainer.getAttribute('id') == 9008642) {
-
-                modalContainer.classList.toggle("active");
-            }
-        });
-
-    }*/
+    createCategorie(urlCategorie3, urlApiTitles, 3);
 
 });

@@ -84,9 +84,9 @@ section {
 }
 
 #best-movies-carousel,
-#scifi-movies-carousel,
-#action-movies-carousel,
-#animation-movies-carousel {
+#categorie1-carousel,
+#categorie2-carousel,
+#categorie3-carousel {
     position: relative;
 }
 
