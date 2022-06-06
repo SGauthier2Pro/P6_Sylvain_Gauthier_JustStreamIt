@@ -4,7 +4,7 @@
  * @returns {HTMLElement}
  */
 function createDivWithClass(className) {
-    let div = document.createElement("div");
+    let div = document.createElement('div');
     div.setAttribute('class', className);
     return div;
 
@@ -49,10 +49,11 @@ class Carousel {
         this.urlImages = this.getMoviesImage();
         this.movieIds = this.getMoviesId();
         this.options = Object.assign({}, {
-            slidesToScroll: 1,
+            slideToScroll: 1,
             slidesVisible: 1
         }, options);
         let children = [].slice.call(element.children);
+        this.isMobile = false;
         this.currentItem = 0;
         this.root = createDivWithClass('carousel');
         this.container = createDivWithClass('carousel__container');
@@ -71,7 +72,8 @@ class Carousel {
         });
         this.setStyle();
         this.createNavigation();
-
+        this.onWindowResize();
+        window.addEventListener('resize', this.onWindowResize.bind(this));
 
     }
 
@@ -80,9 +82,9 @@ class Carousel {
      */
     setStyle() {
 
-        let ratio = this.items.length / this.options.slidesVisible;
+        let ratio = this.items.length / this.slidesVisible;
         this.container.style.width = (ratio * 100) + "%";
-        this.items.forEach(item => item.style.width = ((100 / this.options.slidesVisible) / ratio) + "%");
+        this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / ratio) + "%");
 
     }
 
@@ -96,6 +98,16 @@ class Carousel {
 
     }
 
+    onWindowResize() {
+        let mobile = window.innerWidth < 1000;
+        if (mobile !== this.isMobile) {
+            this.isMobile = mobile;
+            this.setStyle();
+            if (mobile === false && this.currentItem === 6) {
+                this.gotoItem(this.currentItem - (this.slidesVisible - 1));
+            }
+        }
+    }
 
     getMoviesImage() {
         let urlImages = new Array();
@@ -119,14 +131,14 @@ class Carousel {
      * avance le carousel du nombre d'item en option
      */
     next() {
-        this.gotoItem(this.currentItem + this.options.slideToScroll);
+        this.gotoItem(this.currentItem + this.slideToScroll);
     }
 
     /**
      * recule du nombre d'item passé en option
      */
     prev() {
-        this.gotoItem(this.currentItem - this.options.slideToScroll);
+        this.gotoItem(this.currentItem - this.slideToScroll);
     }
 
     /**
@@ -135,8 +147,8 @@ class Carousel {
      */
     gotoItem(index) {
         if (index < 0) {
-            index = this.items.length - this.options.slidesVisible;
-        } else if (index > (this.items.length - this.options.slidesVisible)) {
+            index = this.items.length - this.slidesVisible;
+        } else if (index > (this.items.length - this.slidesVisible)) {
             index = 0;
         }
         let translateX = index * -100 / this.items.length;
@@ -144,6 +156,19 @@ class Carousel {
         this.currentItem = index;
     }
 
+    /**
+     * @returns {number}
+     */
+    get slideToScroll() {
+        return this.isMobile ? 1 : this.options.slideToScroll;
+    }
+
+    /**
+     * @returns {number}
+     */
+    get slidesVisible() {
+        return this.isMobile ? 1 : this.options.slidesVisible;
+    }
 
 }
 
@@ -437,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let categorie1 = "Sci-Fi";
     let categorie2 = "Action";
-    let categorie3 = "Animation";
+    let categorie3 = "Mystery";
 
     setCategorieTitle('categorie1-title', categorie1);
     setCategorieTitle('categorie2-title', categorie2);
