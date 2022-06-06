@@ -1,0 +1,12 @@
+{
+    "name": "JustStreamIt",
+    "version": "1.0.0",
+    "description": "JustStreamIt",
+    "main": "index.js",
+    "scripts": {
+        "prefix": "postcss ./css/index.css --use autoprefixer -d ./css/prefixed/"
+    },
+    "author": "",
+    "license": "ISC",
+    "browserslist": "last 4 versions"
+}

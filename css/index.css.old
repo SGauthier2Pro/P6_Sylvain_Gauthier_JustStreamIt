@@ -1,0 +1,268 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    background: #000;
+}
+
+
+/* header */
+
+header {
+    width: auto;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background: #62757f;
+}
+
+header img {
+    width: 85px;
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+nav {
+    font-size: 24px;
+    margin: auto 50px auto auto;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Section*/
+
+section {
+    background-color: rgb(0, 0, 0);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.container .title {
+    color: #fff;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.best-movie__container {
+    display: flex;
+    border: 2px solid #fff;
+    width: 50%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.best-movie-image {
+    margin: auto 30px auto auto;
+}
+
+.best-movie-image img {
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.movie-informations {
+    position: relative;
+    color: #fff;
+    font-size: large;
+    width: 60%;
+}
+
+.movie-description {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+}
+
+.best-button {
+    background-color: #ff365e;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 25%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto 20px 10px;
+    display: block;
+    min-width: 100px;
+    cursor: pointer;
+}
+
+#best-movies-carousel,
+#categorie1-carousel,
+#categorie2-carousel,
+#categorie3-carousel {
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel__container {
+    transition: transform 0.3s;
+}
+
+.carousel__container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.carousel__item {
+    float: left;
+    border: 2px solid rgb(218, 215, 240);
+}
+
+.item__image img {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.1s;
+}
+
+.item__image img:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.carousel__next,
+.carousel__prev {
+    visibility: visible;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff url("/pictures/right_arrow.svg") center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 40%;
+    right: 75px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.carousel__next:hover {
+    transform: scale(1.2);
+}
+
+.carousel__prev:hover {
+    transform: scale(1.2);
+}
+
+.carousel__prev {
+    background-image: url("/pictures/left_arrow.svg");
+    right: auto;
+    left: 75px;
+}
+
+
+/* modal */
+
+.modal-container {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: visibility 0.4s;
+    z-index: 1;
+}
+
+.modal-container.active {
+    transition: visibility 0s;
+    visibility: visible;
+}
+
+.overlay {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+    transition: opacity 0.4s 0.2s ease-out;
+}
+
+.modal-container.active .overlay {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+}
+
+.modal {
+    opacity: 0;
+    margin-top: 100px;
+    margin-bottom: auto;
+    font-size: medium;
+    width: 95%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 50px));
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.modal-container.active .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s 0.2s ease-out, transform 0.4s 0.2s ease-out;
+}
+
+.close-modal {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #ff365e;
+    color: #fff;
+}
+
+.modal h1 {
+    margin-bottom: 10px;
+    font-family: Montserra, sans-serif;
+    font-weight: bold;
+}
+
+.modal p {
+    line-height: 1.4;
+    margin-bottom: 10px;
+}

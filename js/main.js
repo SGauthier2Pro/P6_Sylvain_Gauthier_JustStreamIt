@@ -4,7 +4,7 @@
  * @returns {HTMLElement}
  */
 function createDivWithClass(className) {
-    let div = document.createElement('div');
+    let div = document.createElement("div");
     div.setAttribute('class', className);
     return div;
 
@@ -287,8 +287,6 @@ class Movie {
 function createModals(requestResponse, urlApiTitles) {
     requestResponse.results.forEach(movie => {
 
-        //console.log(movie.title);
-
         let urlToRequest = urlApiTitles + movie.id;
         let movieRequest = new XMLHttpRequest();
 
@@ -297,7 +295,6 @@ function createModals(requestResponse, urlApiTitles) {
         movieRequest.send();
 
         movieRequest.onload = function() {
-            //moviesObject.push(new Movie(movieRequest.response));
             let newMovie = new Movie(movieRequest.response);
             new Modal(document.querySelector('body'), newMovie);
 
@@ -335,6 +332,38 @@ function createModals(requestResponse, urlApiTitles) {
     });
 }
 
+function createBestMovie(requestResponse, urlApiTitles) {
+    let idMovie = requestResponse.results[0].id;
+    let urlBestMovie = urlApiTitles + idMovie;
+
+    let xmlHttpElement = new XMLHttpRequest();
+
+    xmlHttpElement.open("get", urlBestMovie);
+    xmlHttpElement.responseType = "json";
+    xmlHttpElement.send();
+
+    xmlHttpElement.onload = function() {
+
+        if (xmlHttpElement.status != 200) {
+            console.log("Erreur" + xmlHttpElement.status + ":" + xmlHttpElement.statusText);
+        } else {
+
+            const requestResponse = xmlHttpElement.response;
+            //console.log(requestResponse.id);
+
+            let bestMovieTitle = document.getElementById('best-movie-title');
+            let bestMovieButton = document.getElementById('best-movie-button');
+            let bestMovieDescription = document.getElementById('best-movie-description');
+            let bestMovieImage = document.getElementById('best-image');
+            bestMovieTitle.textContent = requestResponse.title;
+            bestMovieButton.setAttribute('id', 'trigger-' + requestResponse.id);
+            bestMovieDescription.textContent = requestResponse.description;
+            bestMovieImage.setAttribute('src', requestResponse.image_url);
+        }
+
+    }
+}
+
 function createBestMovies(urlBestMovies, urlApiTitles) {
 
     let xmlHttpElement = new XMLHttpRequest();
@@ -352,12 +381,16 @@ function createBestMovies(urlBestMovies, urlApiTitles) {
 
             const requestResponse = xmlHttpElement.response;
 
+            createBestMovie(requestResponse, urlApiTitles);
+
             createModals(requestResponse, urlApiTitles);
 
             new Carousel(document.querySelector('#best-movies-carousel'), requestResponse, {
                 slideToScroll: 1,
                 slidesVisible: 4
             });
+
+
 
         }
     }
