@@ -88,6 +88,9 @@ class Carousel {
 
     }
 
+    /**
+     * crée les bouton de navigation des carousels
+     */
     createNavigation() {
         let nextButton = createDivWithClass('carousel__next');
         let prevButton = createDivWithClass('carousel__prev');
@@ -98,6 +101,9 @@ class Carousel {
 
     }
 
+    /**
+     * ecoute le redimensionnment de la fenetre pour le web responsive
+     */
     onWindowResize() {
         let mobile = window.innerWidth < 1000;
         if (mobile !== this.isMobile) {
@@ -109,6 +115,10 @@ class Carousel {
         }
     }
 
+    /**
+     * 
+     * @returns {Array} retourne le tableau des url d'image
+     */
     getMoviesImage() {
         let urlImages = new Array();
         this.requestResponse.forEach(movieItem => {
@@ -118,6 +128,10 @@ class Carousel {
         return urlImages;
     }
 
+    /**
+     * 
+     * @returns {Array} retourne le tableau des id de film
+     */
     getMoviesId() {
         let idMovies = new Array();
         this.requestResponse.forEach(movieItem => {
@@ -305,7 +319,7 @@ class Movie {
 }
 
 /**
- * fonction créant les modale de la page
+ * fonction créant les modales de la page
  * @param {JSON} requestResponse 
  * @param {String} urlApiTitles 
  */
@@ -357,6 +371,11 @@ function createModals(requestResponse, urlApiTitles) {
     });
 }
 
+/**
+ * Fonction modifiant la tete d'affiche avec les information sdu film le mieux noté
+ * @param {JSON} requestResponse 
+ * @param {String} urlApiTitles 
+ */
 function createBestMovie(requestResponse, urlApiTitles) {
     let idMovie = requestResponse.results[0].id;
     let urlBestMovie = urlApiTitles + idMovie;
@@ -389,6 +408,11 @@ function createBestMovie(requestResponse, urlApiTitles) {
     }
 }
 
+/**
+ * Crée le carousel des meilleurs film
+ * @param {String} urlBestMovies 
+ * @param {String} urlApiTitles 
+ */
 function createBestMovies(urlBestMovies, urlApiTitles) {
 
     let xmlHttpElement = new XMLHttpRequest();
@@ -422,6 +446,12 @@ function createBestMovies(urlBestMovies, urlApiTitles) {
 
 }
 
+/**
+ * fonctoin créant le carousel d'une categorie données
+ * @param {string} urlCategorie 
+ * @param {string} urlApiTitles 
+ * @param {number} categorieNumber 
+ */
 function createCategorie(urlCategorie, urlApiTitles, categorieNumber) {
 
     let xmlHttpElement = new XMLHttpRequest();
@@ -451,6 +481,11 @@ function createCategorie(urlCategorie, urlApiTitles, categorieNumber) {
 
 }
 
+/**
+ * fonction modifiant le titre d'une categorie donnée
+ * @param {string} categorieTitleId 
+ * @param {string} categorie 
+ */
 function setCategorieTitle(categorieTitleId, categorie) {
     let title = document.getElementById(categorieTitleId);
     title.textContent = categorie;
