@@ -105,7 +105,7 @@ class Carousel {
      * ecoute le redimensionnment de la fenetre pour le web responsive
      */
     onWindowResize() {
-        let mobile = window.innerWidth < 1000;
+        let mobile = window.innerWidth < 800;
         if (mobile !== this.isMobile) {
             this.isMobile = mobile;
             this.setStyle();
@@ -355,6 +355,8 @@ function createModals(requestResponse, urlApiTitles) {
                     if (modalContainer.getAttribute('id') == newMovie.id) {
                         modalContainer.classList.toggle("active");
                     }
+                    let myBody = document.getElementsByTagName('body');
+                    myBody[0].setAttribute('class', 'body-noscroll');
                 });
 
             }
@@ -364,6 +366,8 @@ function createModals(requestResponse, urlApiTitles) {
                     if (modalContainer.getAttribute('class') == 'modal-container active') {
                         modalContainer.setAttribute('class', 'modal-container');
                     }
+                    let myBody = document.getElementsByTagName('body');
+                    myBody[0].classList.remove('body-noscroll');
                 });
             }
         };
