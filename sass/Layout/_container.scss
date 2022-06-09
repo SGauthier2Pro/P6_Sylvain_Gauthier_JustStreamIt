@@ -1,0 +1,21 @@
+/* container */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mobile-only() {
+        max-width: 375px;
+    }
+    & .title {
+        width: 75%;
+        max-width: 810px;
+        margin: auto auto 5px auto;
+        @include mobile-only() {
+            text-align: center;
+        }
+    }
+}

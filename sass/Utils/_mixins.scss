@@ -1,0 +1,9 @@
+@mixin border($colour:$colour-white) {
+    border: 2px solid $colour;
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}

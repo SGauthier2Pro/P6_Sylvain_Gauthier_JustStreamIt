@@ -12,5 +12,11 @@ html {
 
 body {
     box-sizing: border-box;
-    background: #000;
+    background: $colour_background;
+}
+
+.body--noscroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }

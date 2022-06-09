@@ -356,7 +356,7 @@ function createModals(requestResponse, urlApiTitles) {
                         modalContainer.classList.toggle("active");
                     }
                     let myBody = document.getElementsByTagName('body');
-                    myBody[0].setAttribute('class', 'body-noscroll');
+                    myBody[0].setAttribute('class', 'body--noscroll');
                 });
 
             }
@@ -367,7 +367,7 @@ function createModals(requestResponse, urlApiTitles) {
                         modalContainer.setAttribute('class', 'modal-container');
                     }
                     let myBody = document.getElementsByTagName('body');
-                    myBody[0].classList.remove('body-noscroll');
+                    myBody[0].classList.remove('body--noscroll');
                 });
             }
         };
@@ -401,7 +401,7 @@ function createBestMovie(requestResponse, urlApiTitles) {
 
             let bestMovieTitle = document.getElementById('best-movie-title');
             let bestMovieButton = document.getElementById('best-movie-button');
-            let bestMovieDescription = document.getElementById('best-movie-description');
+            let bestMovieDescription = document.getElementById('best-movie-description-text');
             let bestMovieImage = document.getElementById('best-image');
             bestMovieTitle.textContent = requestResponse.title;
             bestMovieButton.setAttribute('id', 'trigger-' + requestResponse.id);

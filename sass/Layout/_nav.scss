@@ -1,0 +1,16 @@
+/* nav */
+
+nav {
+    font-family: 'aleoregular', sans-serif;
+    font-size: 2.5rem;
+    margin: auto 45px auto auto;
+    @include mobile-only() {
+        font-size: 1.5rem;
+        margin: auto auto 10px auto;
+    }
+    & a {
+        color: $colour-white;
+        text-decoration: none;
+        margin: auto 5px auto 5px;
+    }
+}
