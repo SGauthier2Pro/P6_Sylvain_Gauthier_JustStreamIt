@@ -267,7 +267,7 @@ class Modal {
         this.movieActorsItem = createListItemWithValue(movieActorsValue);
         this.movieDetailsList.appendChild(this.movieActorsItem);
 
-        this.movieDurationItem = createListItemWithValue("Durée : " + movieObject.duration);
+        this.movieDurationItem = createListItemWithValue("Durée : " + movieObject.duration + ' minutes');
         this.movieDetailsList.appendChild(this.movieDurationItem);
 
         let movieCountriesValue = 'Pays :';
@@ -278,7 +278,7 @@ class Modal {
         this.movieCountriesItem = createListItemWithValue(movieCountriesValue);
         this.movieDetailsList.appendChild(this.movieCountriesItem);
 
-        this.movieBoxOfficeItem = createListItemWithValue('Résultat Box Office : ' + movieObject.boxoffice + ' ' + movieObject.budgetCurrency);
+        this.movieBoxOfficeItem = createListItemWithValue('Résultat Box Office : ' + movieObject.boxoffice);
         this.movieDetailsList.appendChild(this.movieBoxOfficeItem);
 
         this.modal.appendChild(this.movieDetails);
@@ -311,10 +311,22 @@ class Movie {
         this.actors = elementResult.actors;
         this.duration = elementResult.duration;
         this.countries = elementResult.countries;
-        this.boxoffice = elementResult.worldwide_gross_income;
+        this.boxoffice = this.getNCIfNull(elementResult.worldwide_gross_income);
         this.budgetCurrency = elementResult.budget_currency;
         this.description = elementResult.description;
         this.longDescription = elementResult.long_description;
+    }
+
+    /**
+     * verifie si l'information est null et renvoi "N/C" si oui
+     * @param {string} stringToTest 
+     */
+    getNCIfNull(stringToTest) {
+        if (stringToTest == null) {
+            return 'N/C';
+        } else {
+            return stringToTest;
+        }
     }
 }
 
