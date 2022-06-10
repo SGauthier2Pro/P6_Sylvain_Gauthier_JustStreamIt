@@ -189,7 +189,7 @@ section {
 }
 .best-movie__description {
   position: absolute;
-  top: 110px;
+  top: 120px;
   left: 10px;
 }
 @media screen and (max-width: 800px) {
@@ -203,6 +203,12 @@ section {
 
 #best-movie-title {
   font-family: "aleoregular", sans-serif;
+  font-size: 4rem;
+}
+@media screen and (max-width: 800px) {
+  #best-movie-title {
+    font-size: 3rem;
+  }
 }
 
 .best-button {

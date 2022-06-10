@@ -40,7 +40,7 @@
     }
     &__description {
         position: absolute;
-        top: 110px;
+        top: 120px;
         left: 10px;
         @include mobile-only() {
             position: inherit;
@@ -53,6 +53,10 @@
 
 #best-movie-title {
     font-family: 'aleoregular', sans-serif;
+    font-size: 4rem;
+    @include mobile-only() {
+        font-size: 3rem;
+    }
 }
 
 .best-button {
