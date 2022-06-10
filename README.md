@@ -101,7 +101,16 @@ You have now to clone the distant repository on your computer.
   ```
 2. Verify that you got the source directory opening an explorator and verifying that all files are in:
 
-
+![directory_JustStreamIt_UI](https://user-images.githubusercontent.com/99419487/173056682-e960169f-0b31-4315-aad1-1805bbe11506.png)
+![css](https://user-images.githubusercontent.com/99419487/173056732-a10fd34c-51ab-45f8-b5dd-1fee93aa5703.png)
+![prefixed](https://user-images.githubusercontent.com/99419487/173056981-41bf3012-eae9-4737-9621-8e8c75621d2a.png)
+![fonts](https://user-images.githubusercontent.com/99419487/173056743-d2eed1bd-3491-4e19-870d-d6e8fc14ea93.png)
+![js](https://user-images.githubusercontent.com/99419487/173056759-265cf2cd-cfd4-47e2-9393-06a39bbc2258.png)
+![pictures](https://user-images.githubusercontent.com/99419487/173056788-5f4d8fda-7964-4e1a-881c-e5e4ac25e3e7.png)
+![sass](https://user-images.githubusercontent.com/99419487/173056806-1ffd053a-0202-4f12-a613-593b6793e144.png)
+![Base](https://user-images.githubusercontent.com/99419487/173056868-454845d6-a8e3-44e6-9a7e-46ec6738a354.png)
+![Layout](https://user-images.githubusercontent.com/99419487/173057031-3be4a4fb-39a3-4456-9b99-b1501db4ab37.png)
+![Utils](https://user-images.githubusercontent.com/99419487/173057058-6b834328-3c0b-40a9-a8f4-ac856712f0f0.png)
 
 ***
 ### download and run APÏ OCMovies
