@@ -101,14 +101,17 @@ You have now to clone the distant repository on your computer.
   ```
 2. Verify that you got the source directory opening an explorator and verifying that all files are in:
 
-![directory_JustStreamIt_UI](https://user-images.githubusercontent.com/99419487/173056682-e960169f-0b31-4315-aad1-1805bbe11506.png)
+![directory_JustStreamIt_UI](https://user-images.githubusercontent.com/99419487/173395213-52052a36-c26d-4723-811d-e9268f4e8c93.png)
 ![css](https://user-images.githubusercontent.com/99419487/173056732-a10fd34c-51ab-45f8-b5dd-1fee93aa5703.png)
 ![prefixed](https://user-images.githubusercontent.com/99419487/173056981-41bf3012-eae9-4737-9621-8e8c75621d2a.png)
 ![fonts](https://user-images.githubusercontent.com/99419487/173056743-d2eed1bd-3491-4e19-870d-d6e8fc14ea93.png)
-![js](https://user-images.githubusercontent.com/99419487/173056759-265cf2cd-cfd4-47e2-9393-06a39bbc2258.png)
-![pictures](https://user-images.githubusercontent.com/99419487/173056788-5f4d8fda-7964-4e1a-881c-e5e4ac25e3e7.png)
+![js](https://user-images.githubusercontent.com/99419487/173394389-4bc0b9d2-7407-462d-9f34-0766d628f4e9.png)
+![classes](https://user-images.githubusercontent.com/99419487/173394563-bab51fd7-d8af-47c6-b0ff-a51ced672f18.png)
+![functions](https://user-images.githubusercontent.com/99419487/173394578-d4b4613e-8075-4aa4-bfdf-c6b201809239.png)
+![pictures](https://user-images.githubusercontent.com/99419487/173394350-f6ef416d-aa34-49d0-b54f-c2a375923c08.png)
 ![sass](https://user-images.githubusercontent.com/99419487/173056806-1ffd053a-0202-4f12-a613-593b6793e144.png)
 ![Base](https://user-images.githubusercontent.com/99419487/173056868-454845d6-a8e3-44e6-9a7e-46ec6738a354.png)
+![Pages](https://user-images.githubusercontent.com/99419487/173394953-1a93ed42-eba6-44a7-823a-582579b574e4.png)
 ![Layout](https://user-images.githubusercontent.com/99419487/173057031-3be4a4fb-39a3-4456-9b99-b1501db4ab37.png)
 ![Utils](https://user-images.githubusercontent.com/99419487/173057058-6b834328-3c0b-40a9-a8f4-ac856712f0f0.png)
 
