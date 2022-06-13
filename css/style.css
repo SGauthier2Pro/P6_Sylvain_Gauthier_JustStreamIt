@@ -395,4 +395,14 @@ section {
   color: #fff;
 }
 
+.under-construction__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+.under-construction__container img {
+  width: 50vw;
+}
+
 /*# sourceMappingURL=style.css.map */
