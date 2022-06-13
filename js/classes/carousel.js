@@ -5,7 +5,7 @@
 export { Carousel };
 
 
-import { createDivWithClass } from './helpers.js';
+import { createDivWithClass } from '../functions/helpers.js';
 
 class Carousel {
 

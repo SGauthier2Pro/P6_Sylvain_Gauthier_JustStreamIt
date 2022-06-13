@@ -4,7 +4,7 @@
 
 export { Modal };
 
-import { createDivWithClass, createButtonWithClass, createListItemWithValue } from './helpers.js';
+import { createDivWithClass, createButtonWithClass, createListItemWithValue } from '../functions/helpers.js';
 
 class Modal {
 
