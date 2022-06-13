@@ -403,6 +403,7 @@ section {
 }
 .under-construction__container img {
   width: 50vw;
+  max-width: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
