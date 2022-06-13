@@ -116,7 +116,7 @@ You have now to clone the distant repository on your computer.
 ![Utils](https://user-images.githubusercontent.com/99419487/173057058-6b834328-3c0b-40a9-a8f4-ac856712f0f0.png)
 
 ***
-### download and run APÏ OCMovies
+### download and run API OCMovies
 ***
 You have now to clone the distant repository for OCMovies API on your computer.
 1. type the following command in Gitbash console :
