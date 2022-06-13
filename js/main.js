@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let categorie1 = "Sci-Fi";
     let categorie2 = "Action";
-    let categorie3 = "Mystery";
+    let categorie3 = "Animation";
 
     setCategorieTitle('categorie1-title', categorie1);
     setCategorieTitle('categorie2-title', categorie2);
